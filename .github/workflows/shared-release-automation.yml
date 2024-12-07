@@ -1,0 +1,45 @@
+---
+name: Release Automation
+on:
+  workflow_call:
+    inputs:
+      PLUGIN_LIST:
+        description: "List of plugins to use with the release automation"
+        required: true
+        type: string
+    secrets:
+      PROJECT_GITHUB_TOKEN:
+        description: "Access token for GitHub"
+        required: true
+
+jobs:
+  configuration:
+    name: Configuration for Release Automation
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.configuration.outputs.branch }}
+    steps:
+      - id: configuration
+        name: Release options
+        run: |
+          branch=${GITHUB_REF##*/}
+
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+  release-automation:
+    name: Release Automation
+    runs-on: ubuntu-latest
+    needs: configuration
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.configuration.outputs.branch }}
+
+      - name: Running release automation
+        uses: juancarlosjr97/release-it-containerized@0.7.33
+        with:
+          github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
+          plugins_list: ${{ inputs.PLUGIN_LIST }}

@@ -14,3 +14,11 @@ The [Workflow](./.github/workflows/shared-python-tests.yml) has the following in
 | ---------------------- | ------ | ---------------------------------------------- | -------- |
 | CODECOV_TOKEN          | SECRET | The key to record the code coverage to CodeCov | true     |
 
+### Release Automation
+
+The [Workflow](./.github/workflows/shared-release-automation.yml) has the following inputs:
+
+| Environmental Variable | Type   | Description                                        | Required |
+| ---------------------- | ------ | -------------------------------------------------- | -------- |
+| PLUGIN_LIST            | INPUT  | List of plugins to use with the release automation | true     |
+| PROJECT_GITHUB_TOKEN   | SECRET | Access token for GitHub                            | true     |
