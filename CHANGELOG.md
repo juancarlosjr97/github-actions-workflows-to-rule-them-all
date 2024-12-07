@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.1.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.1...0.1.2) (2024-12-07)
+
+### Documentation
+
+* update README with right title ([408fb0f](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/408fb0f83995731ae706dbfce3d93c50984d2f44))
+
 ## [0.1.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.0...0.1.1) (2024-12-07)
 
 ### Documentation
