@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.2.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.2...0.2.0) (2024-12-07)
+
+### Features
+
+* add codacy coverage job to the shared workflow for python tests ([df31fad](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/df31fadbf41fdcbd418d4ddfd0b0758715af87e8))
+
 ## [0.1.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.1...0.1.2) (2024-12-07)
 
 ### Documentation
