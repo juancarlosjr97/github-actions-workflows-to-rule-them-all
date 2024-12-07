@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.1.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.0...0.1.1) (2024-12-07)
+
+### Documentation
+
+* add details about the release-automation workflow ([ce4e4e5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/ce4e4e5d4782961edf4cf29ef54bbd7b69433883))
+
 ## 0.1.0 (2024-12-07)
 
 ### Features
