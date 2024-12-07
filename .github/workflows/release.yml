@@ -1,0 +1,14 @@
+---
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-automation:
+    uses: ./.github/workflows/shared-release-automation.yml
+    secrets:
+      PROJECT_GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
+    with:
+      PLUGIN_LIST: "@release-it/conventional-changelog,@release-it/bumper"
