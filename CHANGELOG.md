@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.3.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.0...0.3.1) (2024-12-07)
+
+### Chores
+
+* **deps:** pin dependencies ([3792fad](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/3792fadf86bd7a05a04404e6fda6a6f5fb4d339a))
+
 ## [0.3.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.2.0...0.3.0) (2024-12-07)
 
 ### Features
