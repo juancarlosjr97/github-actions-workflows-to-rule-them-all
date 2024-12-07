@@ -12,6 +12,7 @@ The [Workflow](./.github/workflows/shared-python-tests.yml) has the following in
 
 | Environmental Variable | Type   | Description                                    | Required |
 | ---------------------- | ------ | ---------------------------------------------- | -------- |
+| CODACY_PROJECT_TOKEN   | SECRET | The key to record the execution to Codacy      | true     |
 | CODECOV_TOKEN          | SECRET | The key to record the code coverage to CodeCov | true     |
 
 ### Release Automation
