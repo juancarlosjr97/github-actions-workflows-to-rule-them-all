@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.3.3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.2...0.3.3) (2024-12-07)
+
+### Code Refactoring
+
+* update shared python workflow stage name and job description to codacy ([667daea](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/667daeae0b19b6efdba21ea1268472b11d07ad3c))
+
 ## [0.3.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.1...0.3.2) (2024-12-07)
 
 ### Chores
