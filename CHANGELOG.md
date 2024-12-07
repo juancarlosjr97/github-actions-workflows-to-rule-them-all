@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.3.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.1...0.3.2) (2024-12-07)
+
+### Chores
+
+* add pin to renovate shareable config presets ([0726478](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/07264782b51016def0a3579288a515fb1f2839ef))
+
 ## [0.3.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.0...0.3.1) (2024-12-07)
 
 ### Chores
