@@ -3,6 +3,16 @@
 This changelog is auto generated using release-it.
 
 
+## [0.3.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.2.0...0.3.0) (2024-12-07)
+
+### Features
+
+* add renovate configuration [skip-ci] ([059499c](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/059499c4097727dca5ae156c11afee3352983114))
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v0.7.34 ([50c08d0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/50c08d07d320935ef7734f3e59c74bdcd74f2148))
+
 ## [0.2.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.1.2...0.2.0) (2024-12-07)
 
 ### Features
