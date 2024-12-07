@@ -22,3 +22,5 @@ The [Workflow](./.github/workflows/shared-release-automation.yml) has the follow
 | ---------------------- | ------ | -------------------------------------------------- | -------- |
 | PLUGIN_LIST            | INPUT  | List of plugins to use with the release automation | true     |
 | PROJECT_GITHUB_TOKEN   | SECRET | Access token for GitHub                            | true     |
+
+The release automation uses the [release-it-containerized](https://github.com/juancarlosjr97/release-it-containerized).
