@@ -25,3 +25,13 @@ The [Workflow](./.github/workflows/shared-release-automation.yml) has the follow
 | PROJECT_GITHUB_TOKEN   | SECRET | Access token for GitHub                            | true     |
 
 The release automation uses the [release-it-containerized](https://github.com/juancarlosjr97/release-it-containerized).
+
+### Rust
+
+#### Tests
+
+The [Workflow](./.github/workflows/shared-rust-tests.yml) has the following inputs:
+
+| Environmental Variable | Type   | Description                                    | Required |
+| ---------------------- | ------ | ---------------------------------------------- | -------- |
+| CODECOV_TOKEN          | SECRET | The key to record the code coverage to CodeCov | true     |
