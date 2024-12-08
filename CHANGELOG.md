@@ -3,6 +3,13 @@
 This changelog is auto generated using release-it.
 
 
+## [0.4.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.3...0.4.0) (2024-12-08)
+
+### Features
+
+* add comments on release it ([2fe0228](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/2fe022805d0af3fefa185b571a52e56c8e97536c)), closes [#6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/6)
+* add rust workflow for testing ([274a9c6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/274a9c6ac2e6cf366c377008e94298bb06c493f3)), closes [#5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/5)
+
 ## [0.3.3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.3.2...0.3.3) (2024-12-07)
 
 ### Code Refactoring
