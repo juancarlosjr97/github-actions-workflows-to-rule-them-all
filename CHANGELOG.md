@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.4.6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.5...0.4.6) (2024-12-12)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v0.7.35 ([1750bce](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/1750bce79c1104e00664a25c01e8678bccaeb97d))
+
 ## [0.4.5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.4...0.4.5) (2024-12-12)
 
 ### Chores
