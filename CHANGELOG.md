@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.4.5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.4...0.4.5) (2024-12-12)
+
+### Chores
+
+* add license ([9ce9368](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/9ce9368aa0f0bac5ac9ab82ccf3be17d46a7512f))
+
 ## [0.4.4](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.3...0.4.4) (2024-12-11)
 
 ### Chores
