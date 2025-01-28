@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.4.17](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.16...0.4.17) (2025-01-28)
+
+### Chores
+
+* **deps:** update actions/setup-python digest to 4237552 ([eb7e040](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/eb7e040b03f093b95d2220d65c124691ffa51287))
+
 ## [0.4.16](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.15...0.4.16) (2025-01-27)
 
 ### Chores
