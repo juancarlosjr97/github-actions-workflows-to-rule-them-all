@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up Python
-        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5
         with:
           cache: pip
 
@@ -31,7 +31,7 @@ jobs:
 
       - name: Upload coverage to Codecov
         # v5
-        uses: codecov/codecov-action@3440e5ef70c638a9f44602a80ab017feee1309fe
+        uses: codecov/codecov-action@f95a404f9265da16dee374e6e9dcb76d3eee88b1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
