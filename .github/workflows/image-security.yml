@@ -5,12 +5,16 @@ description: |
 on:
   workflow_call:
     inputs:
-      IMAGE_TAG:
+      IMAGE_REFERENCE:
         description: "The tag to use for loading and scanning the image"
         required: true
         type: string
       IMAGE_TAR_ARTIFACT_NAME:
         description: "The name of the artifact containing the Docker image tar"
+        required: true
+        type: string
+      IMAGE_TAR_FILE_PATH:
+        description: "The path to the Docker image tar file"
         required: true
         type: string
 
@@ -25,10 +29,10 @@ jobs:
           name: ${{ inputs.IMAGE_TAR_ARTIFACT_NAME }}
           path: .
 
-      - name: Load Docker image from tar
-        run: docker load -i image.tar
+      - name: Load Docker image from TAR
+        run: docker load -i ${{ inputs.IMAGE_TAR_FILE_PATH }}
 
-      - name: Run Trivy scan
+      - name: Run Security scan (trivy)
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: ${{ inputs.IMAGE_TAG }}
+          image-ref: ${{ inputs.IMAGE_REFERENCE }}
