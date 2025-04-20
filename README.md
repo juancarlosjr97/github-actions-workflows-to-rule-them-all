@@ -30,7 +30,7 @@ jobs:
       image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout
         with:
           fetch-depth: 0
 
@@ -48,14 +48,14 @@ jobs:
           echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
 
       - name: Upload image tarball as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact
         with:
           name: docker-image-${{ github.sha }}
           path: ${{ github.sha }}.tar
 
   security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@x.y.z
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
