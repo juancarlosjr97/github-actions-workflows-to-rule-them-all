@@ -1,0 +1,24 @@
+---
+name: Image Security Scan
+description: |
+  This workflow scans the image for vulnerabilities using Trivy.
+on:
+  workflow_call:
+    inputs:
+      IMAGE_REFERENCE:
+        description: "The image reference to be scanned"
+        required: true
+        type: string
+
+jobs:
+  image-security-scan:
+    name: Image Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Security Scan
+        uses: aquasecurity/trivy-action@v0.3.0
+        with:
+          image-ref: ${{ inputs.IMAGE_REFERENCE }}
