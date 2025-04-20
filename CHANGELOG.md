@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.5.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.0...0.5.1) (2025-04-20)
+
+### Chores
+
+* **deps:** pin dependencies ([60ddb53](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/60ddb5398311f68b4a8b8f052493774b911b7069))
+
 ## [0.5.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.27...0.5.0) (2025-04-20)
 
 ### Features
