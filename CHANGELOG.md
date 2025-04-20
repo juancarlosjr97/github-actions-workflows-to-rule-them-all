@@ -3,6 +3,28 @@
 This changelog is auto generated using release-it.
 
 
+## [0.5.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.27...0.5.0) (2025-04-20)
+
+### Features
+
+* add Docker image security scan workflow with Trivy integration and documentation ([65a93d8](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/65a93d822ea0ed5d4291b4aae5589f748a3624fa)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+* add image scan using tar for reusability to avoid building within the workflow ([a236a23](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/a236a236011b532aa0d8ad7022d9e7f1ec0f55d9)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+* add image security scan workflow centralized using Trivy ([ec50b4b](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/ec50b4b94d832bee6e60cf5e969e2b9616840f66)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+
+### Bug Fixes
+
+* correct Trivy action version syntax in image security scan workflow ([a7af670](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/a7af670705b29ab1c891d04671250341240a6ed6)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+* rename input variables for clarity in image security scan workflow ([4050a24](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/4050a248a71d675feef6287cd0a018563b198d9e)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+* update Trivy action version to v0.30.0 for improved security scanning ([da0aa26](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/da0aa266054b652c855be9bf75626a05c22e460f)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+
+### Chores
+
+* add .gitignore to exclude .history directory ([3b540cb](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/3b540cbe45d8d82b7927903bcc89a789289cc390)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+
+### Documentation
+
+* update actions versions in workflows for consistency and clarity ([f94b50c](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/f94b50c3b8ea70b756e016ba9c570bcfc671bd31)), closes [#35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/35)
+
 ## [0.4.27](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.4.26...0.4.27) (2025-04-20)
 
 ### Chores
