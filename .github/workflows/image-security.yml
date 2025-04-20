@@ -1,12 +1,16 @@
----
 name: Image Security Scan
 description: |
-  This workflow scans the image for vulnerabilities using Trivy.
+  This workflow scans a locally saved Docker image (as a tar file) for vulnerabilities using Trivy.
+
 on:
   workflow_call:
     inputs:
-      IMAGE_REFERENCE:
-        description: "The image reference to be scanned"
+      IMAGE_TAG:
+        description: "The tag to use for loading and scanning the image"
+        required: true
+        type: string
+      IMAGE_TAR_ARTIFACT_NAME:
+        description: "The name of the artifact containing the Docker image tar"
         required: true
         type: string
 
@@ -15,10 +19,16 @@ jobs:
     name: Image Security Scan
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.IMAGE_TAR_ARTIFACT_NAME }}
+          path: .
 
-      - name: Security Scan
+      - name: Load Docker image from tar
+        run: docker load -i image.tar
+
+      - name: Run Trivy scan
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: ${{ inputs.IMAGE_REFERENCE }}
+          image-ref: ${{ inputs.IMAGE_TAG }}
