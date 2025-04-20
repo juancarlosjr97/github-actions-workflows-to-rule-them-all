@@ -1,3 +1,4 @@
+---
 name: Image Security Scan
 description: |
   This workflow scans a locally saved Docker image (as a tar file) for vulnerabilities using Trivy.
