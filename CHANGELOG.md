@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.5.5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.4...0.5.5) (2025-05-05)
+
+### Chores
+
+* **deps:** update all dependencies ([cf4412b](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/cf4412b39a6ca9d09d95801f45c889fda8affb0b))
+
 ## [0.5.4](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.3...0.5.4) (2025-04-24)
 
 ### Chores
