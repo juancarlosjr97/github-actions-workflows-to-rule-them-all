@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.5.9](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.8...0.5.9) (2025-09-04)
+
+### Chores
+
+* **deps:** update codecov/codecov-action digest to 3e0ce21 ([8d186ae](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/8d186ae496f64c67a0d9e3e878d734467dc32b65))
+
 ## [0.5.8](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.7...0.5.8) (2025-09-04)
 
 ### Chores
