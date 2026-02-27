@@ -2,6 +2,18 @@
 
 This project is a centralized repository for GitHub Actions workflows used across projects to simplify development wherever possible.
 
+## Notes
+
+### actions/checkout Version Pinning
+
+All workflows and examples in this repository pin `actions/checkout` to **v5 by full commit SHA**. This is intentional.
+
+`actions/checkout@v6` is **not compatible with Docker container actions** — manual credential setups do not work in v6. Only v5 is currently functional for container-based workflows such as those using [release-it-containerized](https://github.com/juancarlosjr97/release-it-containerized).
+
+See upstream bug report: [actions/checkout#2359](https://github.com/actions/checkout/issues/2359)
+
+The Renovate configuration in this repository is set to allow only v5.x updates for `actions/checkout` and will never auto-update to v6.
+
 ## GitHub Actions Shared Workflows
 
 ### Docker
@@ -30,7 +42,7 @@ jobs:
       image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           fetch-depth: 0
 
