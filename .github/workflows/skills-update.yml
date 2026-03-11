@@ -1,0 +1,68 @@
+---
+name: Skills Update
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  skills-update:
+    name: Skills Update
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        with:
+          node-version: lts/*
+
+      - name: Check for skill updates
+        id: skills-check
+        run: |
+          output=$(npx skills check 2>&1) || true
+          echo "$output"
+          echo "output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Update skills
+        run: npx skills update
+
+      - name: Detect changes after skills update
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open pull request with skill updates
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8
+        with:
+          commit-message: "chore: update agent skills"
+          title: "chore: update agent skills"
+          body: |
+            ## Automated Agent Skills Update
+
+            This pull request was automatically created by the [Skills Update workflow](https://github.com/${{ github.repository }}/actions/workflows/skills-update.yml).
+
+            ### Skills Check Output
+
+            ```
+            ${{ steps.skills-check.outputs.output }}
+            ```
+
+            > [!NOTE]
+            > Review the changes before merging to ensure compatibility.
+          branch: chore/skills-update
+          delete-branch: true
+          labels: |
+            dependencies
