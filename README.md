@@ -99,7 +99,7 @@ The release automation uses the [release-it-containerized](https://github.com/ju
 
 ### Skills Update
 
-The [Workflow](./.github/workflows/skills-update.yml) automatically keeps [skills.sh](https://skills.sh) agent skills up to date by running on a weekly schedule (every Monday at midnight UTC) or on demand via `workflow_dispatch`.
+The [Workflow](./.github/workflows/shared-skills-sh-update.yml) automatically keeps [skills.sh](https://skills.sh) agent skills up to date by running on a weekly schedule (every Monday at midnight UTC) or on demand via `workflow_dispatch`.
 
 #### How it works
 
