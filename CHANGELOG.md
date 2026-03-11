@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.6.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.13...0.6.0) (2026-03-11)
+
+### Features
+
+* add automated skills.sh update workflow ([#59](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/59)) ([22d49fb](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/22d49fb6fe8349774c00d6049be1c14b858becb3)), closes [#56](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/56)
+
 ## [0.5.13](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.12...0.5.13) (2026-03-09)
 
 ### Chores
