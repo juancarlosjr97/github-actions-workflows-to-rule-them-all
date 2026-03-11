@@ -97,6 +97,32 @@ The [Workflow](./.github/workflows/shared-release-automation.yml) has the follow
 
 The release automation uses the [release-it-containerized](https://github.com/juancarlosjr97/release-it-containerized).
 
+### Skills Update
+
+The [Workflow](./.github/workflows/skills-update.yml) automatically keeps [skills.sh](https://skills.sh) agent skills up to date by running on a weekly schedule (every Monday at midnight UTC) or on demand via `workflow_dispatch`.
+
+#### How it works
+
+1. Runs `npx skills check` to capture the current state of skills.
+2. Runs `npx skills update` to apply any available updates.
+3. If any files changed, opens a pull request with the `dependencies` and `skills.sh` labels containing the `skills check` output as context.
+4. No-ops if all skills are already up to date.
+
+#### Triggering manually
+
+Navigate to **Actions → Skills Update → Run workflow** in the repository to trigger an immediate check and update.
+
+#### Required permissions
+
+The workflow requires the following permissions at the job level (already configured):
+
+| Permission    | Level | Reason                          |
+| ------------- | ----- | ------------------------------- |
+| contents      | write | Commit updated skill files      |
+| pull-requests | write | Open the update pull request    |
+
+No additional secrets or inputs are needed.
+
 ### Rust
 
 #### Tests
