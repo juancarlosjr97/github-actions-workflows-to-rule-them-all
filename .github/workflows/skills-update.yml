@@ -66,3 +66,4 @@ jobs:
           delete-branch: true
           labels: |
             dependencies
+            skills.sh
