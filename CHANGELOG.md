@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.2...0.7.3) (2026-03-12)
+
+### Documentation
+
+* fix empty changelog for version 0.6.1 ([#69](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/69)) ([5c858b2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/5c858b205281c59f4c595efd79a5a531ddd95d31)), closes [#68](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/68)
+
 ## [0.7.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.1...0.7.2) (2026-03-12)
 
 ### Bug Fixes
