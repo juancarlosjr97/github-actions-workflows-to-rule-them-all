@@ -23,6 +23,10 @@ This changelog is auto generated using release-it.
 
 ## [0.6.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.6.0...0.6.1) (2026-03-11)
 
+### Code Refactoring
+
+* rename `skills-update.yml` to `shared-agents-skills-sh.yml` ([#61](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/61)) ([52c46e9](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/52c46e92edae4eaee2883c7d7c2fa1c2c5cc6b63)), closes [#60](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/60)
+
 ## [0.6.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.13...0.6.0) (2026-03-11)
 
 ### Features
