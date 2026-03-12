@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.0...0.7.1) (2026-03-12)
+
+### Documentation
+
+* set up Copilot instructions and AGENTS.md ([#66](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/66)) ([fedfe3d](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/fedfe3d29b76021af11f183438eae274c5e51363)), closes [#65](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/65)
+
 ## [0.7.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.6.1...0.7.0) (2026-03-12)
 
 ### Features
