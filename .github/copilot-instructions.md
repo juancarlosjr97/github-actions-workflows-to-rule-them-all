@@ -1,5 +1,5 @@
 # Copilot Repository Instructions
 
-## Source of Truth
+When working in this repository, follow the instructions in `AGENTS.md`.
 
-Read the root `AGENTS.md` in the repository for all repository conventions, commit message guidelines, workflow authoring rules, and critical constraints.
+- [../AGENTS.md](../AGENTS.md)
