@@ -52,7 +52,7 @@ jobs:
           body: |
             ## Automated Agent Skills Update
 
-            This pull request was automatically created by the [Skills Update workflow](https://github.com/${{ github.repository }}/actions/workflows/shared-agents-skills-sh.yml).
+            This pull request was automatically created by the [Skills Update workflow](https://github.com/${{ github.repository }}/actions/workflows/shared-agents-skills-sh-update.yml).
 
             ### Skills Check Output
 
