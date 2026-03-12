@@ -3,6 +3,18 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.4...0.7.5) (2026-03-12)
+
+### Chores
+
+* **deps:** update all dependencies ([#58](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/58)) ([7c93cd6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/7c93cd6b1621a71a2e8666330b627a6c32e0c7ff))
+
+## [0.7.4](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.3...0.7.4) (2026-03-12)
+
+### Code Refactoring
+
+* rename shared-agents-skills-sh.yml to shared-agents-skills-sh-update.yml ([#71](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/71)) ([a904667](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/a9046674eaeebc55c6da3da98bd2cdcccccadd31)), closes [#70](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/70)
+
 ## [0.7.3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.2...0.7.3) (2026-03-12)
 
 ### Documentation
