@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.2...0.7.3) (2026-03-12)
+
+### Documentation
+
+* fix empty changelog for version 0.6.1 ([#69](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/69)) ([5c858b2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/5c858b205281c59f4c595efd79a5a531ddd95d31)), closes [#68](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/68)
+
 ## [0.7.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.1...0.7.2) (2026-03-12)
 
 ### Bug Fixes
@@ -22,6 +28,10 @@ This changelog is auto generated using release-it.
 * improve skills workflow for robust change detection ([#63](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/63)) ([0ac64f0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/0ac64f06b9675221aa82c23a597428b6d21464bc)), closes [#62](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/62)
 
 ## [0.6.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.6.0...0.6.1) (2026-03-11)
+
+### Code Refactoring
+
+* rename `skills-update.yml` to `shared-agents-skills-sh.yml` ([#61](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/61)) ([52c46e9](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/52c46e92edae4eaee2883c7d7c2fa1c2c5cc6b63)), closes [#60](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/60)
 
 ## [0.6.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.13...0.6.0) (2026-03-11)
 
