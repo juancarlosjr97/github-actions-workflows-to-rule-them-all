@@ -10,5 +10,16 @@
             "matchPackageNames": ["actions/checkout"],
             "allowedVersions": ">=5.0.0 <6.0.0"
         }
+    ],
+    "customManagers": [
+        {
+            "description": "Automate bumping the skills CLI major version used in the skills-update workflow",
+            "customType": "regex",
+            "fileMatch": ["^\\.github/workflows/shared-agents-skills-sh\\.yml$"],
+            "matchStrings": ["npx -y skills@(?<currentValue>\\d+)"],
+            "depNameTemplate": "skills",
+            "datasourceTemplate": "npm",
+            "versioningTemplate": "npm"
+        }
     ]
 }

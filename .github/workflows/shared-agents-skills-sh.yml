@@ -25,19 +25,19 @@ jobs:
       - name: Check for skill updates
         id: skills-check
         run: |
-          output=$(npx skills check 2>&1) || true
+          output=$(npx -y skills@1 check 2>&1) || true
           echo "$output"
           echo "output<<EOF" >> "$GITHUB_OUTPUT"
           echo "$output" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Update skills
-        run: npx skills update
+        run: npx -y skills@1 update
 
       - name: Detect changes after skills update
         id: changes
         run: |
-          if git diff --quiet; then
+          if [[ -z $(git status --porcelain) ]]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
