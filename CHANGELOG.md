@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.5...0.7.6) (2026-03-12)
+
+### Chores
+
+* **config:** migrate config renovate.json ([#64](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/64)) ([53d4404](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/53d4404a42cdc58476ef7592b006601da6e4e59e))
+
 ## [0.7.5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.4...0.7.5) (2026-03-12)
 
 ### Chores
