@@ -13,7 +13,7 @@
     ],
     "customManagers": [
         {
-            "description": "Automate bumping the skills CLI major version used in the skills-update workflow",
+            "description": "Automate bumping the skills CLI major version used in the skills-sh-update workflow",
             "customType": "regex",
             "fileMatch": ["^\\.github/workflows/shared-agents-skills-sh\\.yml$"],
             "matchStrings": ["npx -y skills@(?<currentValue>\\d+)"],

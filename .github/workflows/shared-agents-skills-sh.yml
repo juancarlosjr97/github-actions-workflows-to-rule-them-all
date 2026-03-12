@@ -1,13 +1,13 @@
 ---
-name: Skills Update
+name: Skills.sh Update
 on:
   schedule:
     - cron: "0 0 * * 1"
   workflow_dispatch:
 
 jobs:
-  skills-update:
-    name: Skills Update
+  skills-sh-update:
+    name: Skills.sh Update
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -62,7 +62,7 @@ jobs:
 
             > [!NOTE]
             > Review the changes before merging to ensure compatibility.
-          branch: chore/skills-update
+          branch: chore/skills-sh-update
           delete-branch: true
           labels: |
             dependencies
