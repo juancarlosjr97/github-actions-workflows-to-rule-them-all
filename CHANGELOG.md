@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.6.1...0.7.0) (2026-03-12)
+
+### Features
+
+* improve skills workflow for robust change detection ([#63](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/63)) ([0ac64f0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/0ac64f06b9675221aa82c23a597428b6d21464bc)), closes [#62](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/62)
+
 ## [0.6.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.6.0...0.6.1) (2026-03-11)
 
 ## [0.6.0](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.5.13...0.6.0) (2026-03-11)
