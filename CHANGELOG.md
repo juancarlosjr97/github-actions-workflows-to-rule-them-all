@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.1...0.7.2) (2026-03-12)
+
+### Bug Fixes
+
+* update workflow names for consistency in skills.sh update process ([83072a7](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/83072a7822521cce60c277baaf2596fb06ae671a)), closes [#67](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/67)
+
 ## [0.7.1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.0...0.7.1) (2026-03-12)
 
 ### Documentation
