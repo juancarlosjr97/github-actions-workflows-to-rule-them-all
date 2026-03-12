@@ -15,7 +15,7 @@
         {
             "description": "Automate bumping the skills CLI major version used in the skills-sh-update workflow",
             "customType": "regex",
-            "fileMatch": ["^\\.github/workflows/shared-agents-skills-sh\\.yml$"],
+            "fileMatch": ["^\\.github/workflows/shared-agents-skills-sh-update\\.yml$"],
             "matchStrings": ["npx -y skills@(?<currentValue>\\d+)"],
             "depNameTemplate": "skills",
             "datasourceTemplate": "npm",
