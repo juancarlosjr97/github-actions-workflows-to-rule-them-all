@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.7](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.6...0.7.7) (2026-03-13)
+
+### Bug Fixes
+
+* add `workflow_call` trigger to shared-agents-skills-sh-update.yml ([#73](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/73)) ([99101d8](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/99101d8ac4d87da3e16d237ffb662c18b48a48e9))
+
 ## [0.7.6](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.5...0.7.6) (2026-03-12)
 
 ### Chores
