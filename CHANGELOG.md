@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.10](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.9...0.7.10) (2026-03-19)
+
+### Bug Fixes
+
+* **shared-docker-security:** fail on OS vulnerabilities with exit-code 1 ([#77](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/77)) ([fa55dd1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/fa55dd169d9c5ed92719b7bb7a5f424dc5a57d51)), closes [#76](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/76)
+
 ## [0.7.9](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.8...0.7.9) (2026-03-16)
 
 ### Chores
