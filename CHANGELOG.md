@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.11](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.10...0.7.11) (2026-03-19)
+
+### Chores
+
+* **deps:** update all dependencies ([#75](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/75)) ([c9ecaa5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c9ecaa544a8dac358730d0a144d09565d674e9bc))
+
 ## [0.7.10](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.9...0.7.10) (2026-03-19)
 
 ### Bug Fixes
