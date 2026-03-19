@@ -37,5 +37,5 @@ jobs:
         uses: aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1 # 0.35.0
         with:
           image-ref: ${{ inputs.IMAGE_REFERENCE }}
-          exit-code: '1'
-          vuln-type: 'os'
+          exit-code: 1
+          vuln-type: os
