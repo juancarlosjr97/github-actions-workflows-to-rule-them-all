@@ -75,6 +75,94 @@ jobs:
 
 ```
 
+### Snyk
+
+#### Docker Security Scan
+
+The [Workflow](./.github/workflows/shared-snyk-docker.yml) scans a locally built Docker image for vulnerabilities using Snyk CLI.
+
+| Environmental Variable  | Type   | Description                                                        | Required |
+| ----------------------- | ------ | ------------------------------------------------------------------ | -------- |
+| IMAGE_REFERENCE         | INPUT  | The Docker image reference to scan (e.g., ghcr.io/org/image:sha)  | true     |
+| IMAGE_TAR_ARTIFACT_NAME | INPUT  | The name of the artifact containing the Docker image tar           | true     |
+| IMAGE_TAR_FILE_PATH     | INPUT  | The path to the Docker image tar file                              | true     |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)    | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                         | true     |
+
+The workflow requires the Docker image to be passed as a tar artifact (same pattern as the Trivy Docker security workflow). Authenticate with Snyk by providing a `SNYK_TOKEN` secret. Obtain a token from your [Snyk account settings](https://app.snyk.io/account).
+
+##### Example
+
+```yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      image_reference: ${{ steps.build.outputs.image_reference }}
+      image_tar_artifact_name: ${{ steps.save.outputs.image_tar_artifact_name }}
+      image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          fetch-depth: 0
+
+      - name: Build the Image
+        id: build
+        run: |
+          docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+          echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Save Docker image to tarball
+        id: save
+        run: |
+          docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
+          echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
+          echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
+
+      - name: Upload image tarball as artifact
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        with:
+          name: docker-image-${{ github.sha }}
+          path: ${{ github.sha }}.tar
+
+  snyk-docker-security:
+    needs: build
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-docker.yml
+    with:
+      IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
+      IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
+      IMAGE_TAR_FILE_PATH: ${{ needs.build.outputs.image_tar_file_path }}
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
+
+#### Security Scan (Non-Docker)
+
+The [Workflow](./.github/workflows/shared-snyk-security.yml) scans a project's dependencies for vulnerabilities using Snyk CLI. Supports any ecosystem that Snyk CLI supports (npm, pip, cargo, composer, etc.).
+
+| Environmental Variable  | Type   | Description                                                                | Required |
+| ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the project to scan (relative to repository root) | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)            | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                 | true     |
+
+Obtain a `SNYK_TOKEN` from your [Snyk account settings](https://app.snyk.io/account) and add it as a repository or organization secret.
+
+##### Example
+
+```yml
+jobs:
+  snyk-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-security.yml
+    with:
+      PROJECT_DIRECTORY: .
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
+
 ### Python
 
 #### Tests

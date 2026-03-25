@@ -1,0 +1,56 @@
+---
+name: Snyk Docker Security Scan
+description: |
+  This workflow scans a locally saved Docker image (as a tar file) for vulnerabilities using Snyk CLI.
+
+on:
+  workflow_call:
+    inputs:
+      IMAGE_REFERENCE:
+        description: "The Docker image reference to scan (e.g., ghcr.io/org/image:sha)"
+        required: true
+        type: string
+      IMAGE_TAR_ARTIFACT_NAME:
+        description: "The name of the artifact containing the Docker image tar"
+        required: true
+        type: string
+      IMAGE_TAR_FILE_PATH:
+        description: "The path to the Docker image tar file"
+        required: true
+        type: string
+      SNYK_SEVERITY_THRESHOLD:
+        description: "Minimum severity level to fail on (low, medium, high, critical)"
+        required: false
+        type: string
+        default: "high"
+    secrets:
+      SNYK_TOKEN:
+        description: "The Snyk authentication token for scanning"
+        required: true
+
+jobs:
+  snyk-docker-security:
+    name: Snyk Docker Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: ${{ inputs.IMAGE_TAR_ARTIFACT_NAME }}
+          path: .
+
+      - name: Load Docker image from TAR
+        run: docker load -i ${{ inputs.IMAGE_TAR_FILE_PATH }}
+
+      - name: Setup Snyk CLI
+        uses: snyk/actions/setup@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
+
+      - name: Run Snyk container test
+        run: snyk container test ${{ inputs.IMAGE_REFERENCE }} --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }}
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

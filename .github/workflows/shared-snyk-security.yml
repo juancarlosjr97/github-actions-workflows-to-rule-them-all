@@ -1,0 +1,45 @@
+---
+name: Snyk Security Scan
+description: |
+  This workflow scans a project's dependencies for vulnerabilities using Snyk CLI.
+  Supports any ecosystem that Snyk CLI supports (npm, pip, cargo, composer, etc.).
+
+on:
+  workflow_call:
+    inputs:
+      PROJECT_DIRECTORY:
+        description: "The directory containing the project to scan (relative to repository root)"
+        required: false
+        type: string
+        default: "."
+      SNYK_SEVERITY_THRESHOLD:
+        description: "Minimum severity level to fail on (low, medium, high, critical)"
+        required: false
+        type: string
+        default: "high"
+    secrets:
+      SNYK_TOKEN:
+        description: "The Snyk authentication token for scanning"
+        required: true
+
+jobs:
+  snyk-security:
+    name: Snyk Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+
+      - name: Setup Snyk CLI
+        uses: snyk/actions/setup@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
+
+      - name: Run Snyk to check for vulnerabilities
+        working-directory: ${{ inputs.PROJECT_DIRECTORY }}
+        run: snyk test --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }}
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
