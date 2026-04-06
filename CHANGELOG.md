@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.27](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.26...0.7.27) (2026-04-06)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.17 ([#95](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/95)) ([22e0602](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/22e06023daeafe133303aa8eaf5fb5e96b997480))
+
 ## [0.7.26](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.25...0.7.26) (2026-04-06)
 
 ### Chores
