@@ -3,6 +3,8 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.38](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.37...0.7.38) (2026-04-12)
+
 ## [0.7.37](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.36...0.7.37) (2026-04-11)
 
 ## [0.7.36](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.35...0.7.36) (2026-04-10)
