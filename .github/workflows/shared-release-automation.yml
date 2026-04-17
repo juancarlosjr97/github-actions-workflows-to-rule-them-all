@@ -39,7 +39,7 @@ jobs:
           ref: ${{ needs.configuration.outputs.branch }}
 
       - name: Running release automation
-        uses: juancarlosjr97/release-it-containerized@6e34c3dbabd1c5a8360c788eaf059721a3030654 # 2.1.36
+        uses: juancarlosjr97/release-it-containerized@ec58b49e654649e0a03f299685ffd0d146b600fb # 2.1.37
         with:
           github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           plugins_list: ${{ inputs.PLUGIN_LIST }}
