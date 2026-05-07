@@ -39,7 +39,9 @@ jobs:
           ref: ${{ needs.configuration.outputs.branch }}
 
       - name: Running release automation
-        uses: juancarlosjr97/release-it-containerized@ba06fd07b5a85af8fa2a1ff7c43cf2c0c5652f15 # 2.1.43
+        # Intentionally pinned to @main (not a SHA): this is an internal shared-tooling
+        # repo. SHA/tag pinning causes circular Renovate update churn across the ecosystem.
+        uses: juancarlosjr97/release-it-containerized@main
         with:
           github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           plugins_list: ${{ inputs.PLUGIN_LIST }}
