@@ -53,6 +53,8 @@ uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
 
 Never use floating tags like `@v1`, `@latest`, or branch references.
 
+Exception: references to this internal shared-tooling ecosystem — `juancarlosjr97/pre-commit-to-rule-them-all`, `juancarlosjr97/github-actions-workflows-to-rule-them-all`, `juancarlosjr97/release-it-containerized`, and `juancarlosjr97/renovate-configuration` — intentionally track `main`/`master` to avoid circular Renovate update churn.
+
 ## File Structure
 
 ```
