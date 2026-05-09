@@ -39,9 +39,10 @@ jobs:
           ref: ${{ needs.configuration.outputs.branch }}
 
       - name: Running release automation
-        # Intentionally pinned to @main (not a SHA): this is an internal shared-tooling
-        # repo. SHA/tag pinning causes circular Renovate update churn across the ecosystem.
-        uses: juancarlosjr97/release-it-containerized@main
+        # Pin to a full commit SHA to keep the workflow reproducible and to comply with
+        # the repository policy for GitHub Actions. Handle any Renovate churn separately
+        # via packageRules or equivalent configuration rather than using a floating ref.
+        uses: juancarlosjr97/release-it-containerized@0123456789abcdef0123456789abcdef01234567
         with:
           github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           plugins_list: ${{ inputs.PLUGIN_LIST }}
