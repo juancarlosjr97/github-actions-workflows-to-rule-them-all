@@ -13,16 +13,6 @@
                 "actions/checkout"
             ],
             "allowedVersions": ">=5.0.0 <6.0.0"
-        },
-        {
-            "description": "Disable Renovate updates for internal shared-tooling ecosystem repositories. These are intentionally pinned to @main to prevent circular dependency churn across the tightly coupled tooling repos.",
-            "matchPackageNames": [
-                "juancarlosjr97/pre-commit-to-rule-them-all",
-                "juancarlosjr97/github-actions-workflows-to-rule-them-all",
-                "juancarlosjr97/release-it-containerized",
-                "juancarlosjr97/renovate-configuration"
-            ],
-            "enabled": false
         }
     ],
     "customManagers": [
