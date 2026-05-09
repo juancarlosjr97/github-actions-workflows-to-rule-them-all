@@ -1,7 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>juancarlosjr97/renovate-configuration#0.3.2"
+        "github>juancarlosjr97/renovate-configuration#main",
+        "github>juancarlosjr97/renovate-configuration//presets/internal-tooling-circular#main"
     ],
     "packageRules": [
         {
@@ -13,6 +14,22 @@
                 "actions/checkout"
             ],
             "allowedVersions": ">=5.0.0 <6.0.0"
+        },
+        {
+            "description": "Internal shared-tooling repositories intentionally track main/master and are excluded from Renovate update churn in this circular tooling ecosystem.",
+            "matchPackageNames": [
+                "juancarlosjr97/pre-commit-to-rule-them-all",
+                "juancarlosjr97/github-actions-workflows-to-rule-them-all",
+                "juancarlosjr97/release-it-containerized",
+                "juancarlosjr97/renovate-configuration"
+            ],
+            "matchSourceUrls": [
+                "https://github.com/juancarlosjr97/pre-commit-to-rule-them-all",
+                "https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all",
+                "https://github.com/juancarlosjr97/release-it-containerized",
+                "https://github.com/juancarlosjr97/renovate-configuration"
+            ],
+            "enabled": false
         }
     ],
     "customManagers": [
