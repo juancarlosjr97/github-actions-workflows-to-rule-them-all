@@ -14,6 +14,8 @@ See upstream bug report: [actions/checkout#2359](https://github.com/actions/chec
 
 The Renovate configuration in this repository is set to allow only v5.x updates for `actions/checkout` and will never auto-update to v6.
 
+The only exception is this repository's internal shared-tooling ecosystem (`juancarlosjr97/pre-commit-to-rule-them-all`, `juancarlosjr97/github-actions-workflows-to-rule-them-all`, `juancarlosjr97/release-it-containerized`, and `juancarlosjr97/renovate-configuration`), which intentionally tracks `main`/`master` refs instead of tags or SHAs.
+
 ## GitHub Actions Shared Workflows
 
 ### Docker
