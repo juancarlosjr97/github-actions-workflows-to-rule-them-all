@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.65](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.64...0.7.65) (2026-05-09)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.3.0 ([#138](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/138)) ([8774b46](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/8774b46b1b588061b433c59539f1f6f1818b9169))
+
 ## [0.7.64](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.63...0.7.64) (2026-05-09)
 
 ### Chores
