@@ -1,7 +1,5 @@
 ---
 name: Security
-description: |
-  This workflow scans Rust dependencies for known vulnerabilities using cargo-audit.
 
 on:
   workflow_call:
