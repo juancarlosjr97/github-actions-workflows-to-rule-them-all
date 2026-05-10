@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.69](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.68...0.7.69) (2026-05-10)
+
+### Bug Fixes
+
+* pin internal shared-tooling references to `main` and suppress Renovate churn ([#141](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/141)) ([2c414c7](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/2c414c71fef6449c030e61b4e8d31b08fb87d6e4))
+
 ## [0.7.68](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.67...0.7.68) (2026-05-10)
 
 ### Chores
