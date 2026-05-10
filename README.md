@@ -127,6 +127,13 @@ No additional secrets or inputs are needed.
 
 ### Rust
 
+#### Security
+
+The [Workflow](./.github/workflows/shared-rust-tests.yml) includes a Cargo
+Audit stage powered by
+[`rustsec/audit-check`](https://github.com/rustsec/audit-check) to fail on
+known RustSec vulnerabilities.
+
 #### Tests
 
 The [Workflow](./.github/workflows/shared-rust-tests.yml) has the following inputs:
