@@ -136,7 +136,7 @@ known RustSec vulnerabilities.
 
 | Environmental Variable | Type   | Description                                 | Required |
 | ---------------------- | ------ | ------------------------------------------- | -------- |
-| GITHUB_TOKEN           | SECRET | Token used by rustsec/audit-check           | true     |
+| PROJECT_GITHUB_TOKEN   | SECRET | Token used by rustsec/audit-check           | true     |
 
 #### Tests
 

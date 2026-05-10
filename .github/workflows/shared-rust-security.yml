@@ -4,7 +4,7 @@ name: Security
 on:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
+      PROJECT_GITHUB_TOKEN:
         description: "GitHub token used by rustsec/audit-check"
         required: true
 
@@ -24,4 +24,4 @@ jobs:
       - name: Run Cargo Audit
         uses: rustsec/audit-check@69366f33c96575abad1ee0dba8212993eecbe998 # v2.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
