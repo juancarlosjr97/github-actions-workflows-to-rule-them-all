@@ -1,7 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>juancarlosjr97/renovate-configuration#0.4.0"
+        "github>juancarlosjr97/renovate-configuration#main",
+        "github>juancarlosjr97/renovate-configuration//presets/internal-tooling-circular#main"
     ],
     "packageRules": [
         {
