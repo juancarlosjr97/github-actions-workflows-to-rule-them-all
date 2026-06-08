@@ -18,7 +18,7 @@ The only exception is this repository's internal shared-tooling ecosystem (`juan
 
 ## GitHub Actions Shared Workflows
 
-The security workflows documented below use Snyk's official sub-actions from [`snyk/actions`](https://github.com/snyk/actions). Each scan step uses `continue-on-error: true` so results are always uploaded to [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning) as SARIF, even when vulnerabilities are detected. Create a `SNYK_TOKEN` in your [Snyk account settings](https://app.snyk.io/account) and pass it as a repository or organization secret.
+The security workflows documented below use Snyk's official sub-actions from [`snyk/actions`](https://github.com/snyk/actions). Each scan step uses `continue-on-error: true` so results are always uploaded to [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning) as SARIF, even when vulnerabilities are detected. To use these workflows, create a `SNYK_TOKEN` in your [Snyk account settings](https://app.snyk.io/account) and configure it as a repository or organization secret.
 
 ### Docker
 
@@ -73,7 +73,7 @@ jobs:
 
   docker-security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@main
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
@@ -100,7 +100,7 @@ The [Workflow](./.github/workflows/shared-node-security.yml) scans a Node.js pro
 ```yml
 jobs:
   node-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-security.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-security.yml@main
     with:
       PROJECT_DIRECTORY: .
       SNYK_SEVERITY_THRESHOLD: high
@@ -125,7 +125,7 @@ The [Workflow](./.github/workflows/shared-python-security.yml) scans a Python pr
 ```yml
 jobs:
   python-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-security.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-security.yml@main
     with:
       PROJECT_DIRECTORY: .
       SNYK_SEVERITY_THRESHOLD: high
@@ -159,7 +159,7 @@ The [Workflow](./.github/workflows/shared-iac-security.yml) scans Infrastructure
 ```yml
 jobs:
   iac-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-security.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-security.yml@main
     with:
       IAC_FILE_PATH: terraform/
       SNYK_SEVERITY_THRESHOLD: high
