@@ -83,7 +83,7 @@ All Snyk workflows use `continue-on-error: true` on the scan step so that result
 
 #### Docker Security Scan
 
-The [Workflow](./.github/workflows/shared-docker-snyk.yml) scans a locally built Docker image for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+The [Workflow](./.github/workflows/shared-docker-snyk-security.yml) scans a locally built Docker image for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                        | Required |
 | ----------------------- | ------ | ------------------------------------------------------------------ | -------- |
@@ -132,7 +132,7 @@ jobs:
 
   snyk-docker-security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-snyk.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-snyk-security.yml
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
@@ -144,7 +144,7 @@ jobs:
 
 #### Node Security Scan
 
-The [Workflow](./.github/workflows/shared-node-snyk.yml) scans a Node.js project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+The [Workflow](./.github/workflows/shared-node-snyk-security.yml) scans a Node.js project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                                | Required |
 | ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
@@ -157,7 +157,7 @@ The [Workflow](./.github/workflows/shared-node-snyk.yml) scans a Node.js project
 ```yml
 jobs:
   snyk-node-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-snyk.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-snyk-security.yml
     with:
       PROJECT_DIRECTORY: .
       SNYK_SEVERITY_THRESHOLD: high
@@ -167,7 +167,7 @@ jobs:
 
 #### Python Security Scan
 
-The [Workflow](./.github/workflows/shared-python-snyk.yml) scans a Python project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+The [Workflow](./.github/workflows/shared-python-snyk-security.yml) scans a Python project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                                | Required |
 | ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
@@ -180,7 +180,7 @@ The [Workflow](./.github/workflows/shared-python-snyk.yml) scans a Python projec
 ```yml
 jobs:
   snyk-python-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-snyk.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-snyk-security.yml
     with:
       PROJECT_DIRECTORY: .
       SNYK_SEVERITY_THRESHOLD: high
@@ -190,7 +190,7 @@ jobs:
 
 #### Infrastructure as Code Security Scan
 
-The [Workflow](./.github/workflows/shared-iac-snyk.yml) scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, CloudFormation, etc.) for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+The [Workflow](./.github/workflows/shared-iac-snyk-security.yml) scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, CloudFormation, etc.) for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                                                                    | Required |
 | ----------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | -------- |
@@ -203,7 +203,7 @@ The [Workflow](./.github/workflows/shared-iac-snyk.yml) scans Infrastructure as 
 ```yml
 jobs:
   snyk-iac-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-snyk.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-snyk-security.yml
     with:
       IAC_FILE_PATH: terraform/
       SNYK_SEVERITY_THRESHOLD: high
