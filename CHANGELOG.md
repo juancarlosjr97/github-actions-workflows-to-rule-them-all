@@ -3,6 +3,246 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.70](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.69...0.7.70) (2026-06-08)
+
+### Chores
+
+* **deps:** update codecov/codecov-action digest to e79a696 ([#144](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/144)) ([23ac041](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/23ac041cf5916a86a07acfd143b5cacc246ba64b))
+
+## [0.7.69](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.68...0.7.69) (2026-05-10)
+
+### Bug Fixes
+
+* pin internal shared-tooling references to `main` and suppress Renovate churn ([#141](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/141)) ([2c414c7](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/2c414c71fef6449c030e61b4e8d31b08fb87d6e4))
+
+## [0.7.68](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.67...0.7.68) (2026-05-10)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.4.0 ([#142](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/142)) ([0e48514](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/0e4851407575cd97f4bc8d632cbab0ec04269799))
+
+## [0.7.67](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.66...0.7.67) (2026-05-09)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.3.3 ([#140](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/140)) ([5e7b0c2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/5e7b0c29bc98417ae96b06a96ef703795eabd890))
+
+## [0.7.66](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.65...0.7.66) (2026-05-09)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.3.2 ([#139](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/139)) ([d714db5](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/d714db555f6a998096d408759a86f7d48c54435e))
+
+## [0.7.65](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.64...0.7.65) (2026-05-09)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.3.0 ([#138](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/138)) ([8774b46](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/8774b46b1b588061b433c59539f1f6f1818b9169))
+
+## [0.7.64](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.63...0.7.64) (2026-05-09)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.6 ([#136](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/136)) ([0391f21](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/0391f21b5fe7d7bef3e759f5678844c9d38f3f15))
+
+## [0.7.63](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.62...0.7.63) (2026-05-08)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.5 ([#135](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/135)) ([c7da774](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c7da774a37346569b6db7ea2c2ad05320e70bb75))
+
+## [0.7.62](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.61...0.7.62) (2026-05-07)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.4 ([#134](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/134)) ([d45f8ee](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/d45f8ee693e01d59934bc6c32cc2ea5c3829f67c))
+
+## [0.7.61](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.60...0.7.61) (2026-05-06)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.3 ([#129](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/129)) ([6a907a3](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/6a907a3a0810956e2d21e99015b3c98baf156932))
+
+## [0.7.60](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.59...0.7.60) (2026-05-06)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.2 ([#128](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/128)) ([daf30e1](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/daf30e1e4e659a8002e1e9bcfa295a8ffb812eef))
+
+## [0.7.59](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.58...0.7.59) (2026-05-05)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.1 ([#127](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/127)) ([9311417](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/9311417ab0a504eb16aee79f1684e860479d657a))
+
+## [0.7.58](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.57...0.7.58) (2026-05-05)
+
+## [0.7.57](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.56...0.7.57) (2026-05-04)
+
+## [0.7.56](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.55...0.7.56) (2026-05-04)
+
+## [0.7.55](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.54...0.7.55) (2026-05-04)
+
+## [0.7.54](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.53...0.7.54) (2026-05-03)
+
+## [0.7.53](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.52...0.7.53) (2026-05-03)
+
+## [0.7.52](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.51...0.7.52) (2026-05-02)
+
+## [0.7.51](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.50...0.7.51) (2026-04-22)
+
+## [0.7.50](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.49...0.7.50) (2026-04-21)
+
+## [0.7.49](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.48...0.7.49) (2026-04-21)
+
+## [0.7.48](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.47...0.7.48) (2026-04-20)
+
+## [0.7.47](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.46...0.7.47) (2026-04-18)
+
+## [0.7.46](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.45...0.7.46) (2026-04-18)
+
+## [0.7.45](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.44...0.7.45) (2026-04-17)
+
+## [0.7.44](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.43...0.7.44) (2026-04-17)
+
+## [0.7.43](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.42...0.7.43) (2026-04-16)
+
+## [0.7.42](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.41...0.7.42) (2026-04-14)
+
+## [0.7.41](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.40...0.7.41) (2026-04-13)
+
+## [0.7.40](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.39...0.7.40) (2026-04-13)
+
+## [0.7.39](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.38...0.7.39) (2026-04-13)
+
+## [0.7.38](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.37...0.7.38) (2026-04-12)
+
+## [0.7.37](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.36...0.7.37) (2026-04-11)
+
+## [0.7.36](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.35...0.7.36) (2026-04-10)
+
+## [0.7.35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.34...0.7.35) (2026-04-10)
+
+## [0.7.34](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.33...0.7.34) (2026-04-09)
+
+## [0.7.33](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.32...0.7.33) (2026-04-09)
+
+## [0.7.32](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.31...0.7.32) (2026-04-08)
+
+## [0.7.31](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.30...0.7.31) (2026-04-08)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.21 ([#99](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/99)) ([a43d757](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/a43d7571ad469509b7319c378b60736211520c46))
+
+## [0.7.30](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.29...0.7.30) (2026-04-08)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.20 ([#98](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/98)) ([d00f490](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/d00f4901834762c8d359adbe29d152d37399582f))
+
+## [0.7.29](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.28...0.7.29) (2026-04-07)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.19 ([#97](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/97)) ([4571e97](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/4571e97ac33c7234cf4005572ca1a4f095c2edb3))
+
+## [0.7.28](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.27...0.7.28) (2026-04-07)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.18 ([#96](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/96)) ([500d27a](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/500d27a46495b781d0387588b07723e5b372441b))
+
+## [0.7.27](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.26...0.7.27) (2026-04-06)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.17 ([#95](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/95)) ([22e0602](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/22e06023daeafe133303aa8eaf5fb5e96b997480))
+
+## [0.7.26](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.25...0.7.26) (2026-04-06)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.16 ([#94](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/94)) ([cfc9e35](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/cfc9e356b6f4571389d9631e11e41995e99856bc))
+
+## [0.7.25](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.24...0.7.25) (2026-04-05)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.15 ([#93](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/93)) ([8046bc4](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/8046bc4751c4bb15b4baec84b01b7e817ef90799))
+
+## [0.7.24](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.23...0.7.24) (2026-04-05)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.14 ([#92](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/92)) ([c5a0d9a](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c5a0d9a0198e322bf8153c3eb551ea9d7c77aafe))
+
+## [0.7.23](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.22...0.7.23) (2026-04-05)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.13 ([#91](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/91)) ([0ca737c](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/0ca737c555613394bd16cf2b7326754ac4724af8))
+
+## [0.7.22](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.21...0.7.22) (2026-04-04)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.12 ([#90](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/90)) ([ff04677](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/ff04677b1a2cc8413c9b8ef231bceaa8526439bd))
+
+## [0.7.21](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.20...0.7.21) (2026-04-03)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.11 ([#89](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/89)) ([5f709fb](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/5f709fb17ff8883965c9cc0d3c4ad7c3812ca018))
+
+## [0.7.20](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.19...0.7.20) (2026-04-03)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.10 ([#88](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/88)) ([c910a59](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c910a59bff91a1d23c7b2ac426a6d5bbfd57cc33))
+
+## [0.7.19](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.18...0.7.19) (2026-04-03)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.9 ([#87](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/87)) ([fac880d](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/fac880d254449ef3f6ee3dba20b1c78ac045e594))
+
+## [0.7.18](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.17...0.7.18) (2026-04-02)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.8 ([#86](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/86)) ([78cb35e](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/78cb35e36d8b81308a1077bd044c514c634756a3))
+
+## [0.7.17](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.16...0.7.17) (2026-04-02)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.7 ([#85](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/85)) ([ea3fa04](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/ea3fa04e4a37efacf979b6cf832882c2aa27b39d))
+
+## [0.7.16](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.15...0.7.16) (2026-04-01)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.6 ([#84](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/84)) ([3cba588](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/3cba5889c163c552689555a3ae4064d11db93740))
+
+## [0.7.15](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.14...0.7.15) (2026-03-27)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.5 ([#83](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/83)) ([dd17399](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/dd17399190ea93ff48a535100f10b4b3bbcf540f))
+
+## [0.7.14](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.13...0.7.14) (2026-03-27)
+
+### Chores
+
+* **deps:** update juancarlosjr97/release-it-containerized action to v2.1.4 ([#82](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/82)) ([c77af97](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c77af979330d0e3591b2d5d1de267dc63a022e35))
+
+## [0.7.13](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.12...0.7.13) (2026-03-26)
+
+### Chores
+
+* **deps:** update all dependencies ([#81](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/81)) ([1855aa2](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/1855aa205da70fa9738e61223393d9d8d53186d5))
+
 ## [0.7.12](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.11...0.7.12) (2026-03-20)
 
 ### Chores

@@ -39,7 +39,8 @@ jobs:
           ref: ${{ needs.configuration.outputs.branch }}
 
       - name: Running release automation
-        uses: juancarlosjr97/release-it-containerized@ca0f4bf140a8690672a149af8a9823368534ac9a # 2.1.2
+        # Internal shared-tooling refs intentionally track main/master to avoid circular update churn.
+        uses: juancarlosjr97/release-it-containerized@main
         with:
           github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           plugins_list: ${{ inputs.PLUGIN_LIST }}
