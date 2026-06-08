@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Snyk to check Node.js project for vulnerabilities
         continue-on-error: true
-        uses: snyk/actions/node@8e119fbb6c251787721d34ba683ed48eba792766 # master
+        uses: snyk/actions/node@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
