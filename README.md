@@ -151,7 +151,7 @@ The [Workflow](./.github/workflows/shared-iac-security.yml) scans Infrastructure
 | Input / Secret        | Type   | Description                                                                                                    | Required |
 | --------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | -------- |
 | IAC_FILE_PATH         | INPUT  | Path to the IaC file or directory to scan (relative to repository root). Scans the whole repository if omitted | false    |
-| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)                                                | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)                                                 | false    |
 | SNYK_TOKEN            | SECRET | The Snyk authentication token for scanning                                                                     | true     |
 
 ##### Example
