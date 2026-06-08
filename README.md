@@ -18,82 +18,23 @@ The only exception is this repository's internal shared-tooling ecosystem (`juan
 
 ## GitHub Actions Shared Workflows
 
+The security workflows documented below use Snyk's official sub-actions from [`snyk/actions`](https://github.com/snyk/actions). Each scan step uses `continue-on-error: true` so results are always uploaded to [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning) as SARIF, even when vulnerabilities are detected. Create a `SNYK_TOKEN` in your [Snyk account settings](https://app.snyk.io/account) and pass it as a repository or organization secret.
+
 ### Docker
 
 #### Security
 
-The [Workflow](./.github/workflows/shared-docker-security.yml) has the following inputs:
+The [Workflow](./.github/workflows/shared-docker-security.yml) scans a locally built Docker image for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
-| Environmental Variable  | Type  | Description                                              | Required |
-| ----------------------- | ----- | -------------------------------------------------------- | -------- |
-| IMAGE_REFERENCE         | INPUT | The tag to use for loading and scanning the image        | true     |
-| IMAGE_TAR_ARTIFACT_NAME | INPUT | The name of the artifact containing the Docker image tar | true     |
-| IMAGE_TAR_FILE_PATH     | INPUT | The path to the Docker image tar file                    | true     |
+| Input / Secret          | Type   | Description                                                       | Required |
+| ----------------------- | ------ | ----------------------------------------------------------------- | -------- |
+| IMAGE_REFERENCE         | INPUT  | The Docker image reference to scan (e.g., ghcr.io/org/image:sha) | true     |
+| IMAGE_TAR_ARTIFACT_NAME | INPUT  | The name of the artifact containing the Docker image tar          | true     |
+| IMAGE_TAR_FILE_PATH     | INPUT  | The path to the Docker image tar file                             | true     |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)   | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                        | true     |
 
-The workflow requires to pass the built image with a reference and as a tar file to be downloaded, and added to the security job.
-
-##### Example
-
-```yml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      image_reference: ${{ steps.build.outputs.image_reference }}
-      image_tar_artifact_name: ${{ steps.save.outputs.image_tar_artifact_name }}
-      image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          fetch-depth: 0
-
-      - name: Build the Image
-        id: build
-        run: |
-          docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
-          echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
-
-      - name: Save Docker image to tarball
-        id: save
-        run: |
-          docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
-          echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
-          echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
-
-      - name: Upload image tarball as artifact
-        uses: actions/upload-artifact
-        with:
-          name: docker-image-${{ github.sha }}
-          path: ${{ github.sha }}.tar
-
-  security:
-    needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@main
-    with:
-      IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
-      IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
-      IMAGE_TAR_FILE_PATH: ${{ needs.build.outputs.image_tar_file_path }}
-
-```
-
-### Snyk
-
-All Snyk workflows use `continue-on-error: true` on the scan step so that results are always uploaded to [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning) as SARIF, even when vulnerabilities are detected. Obtain a `SNYK_TOKEN` from your [Snyk account settings](https://app.snyk.io/account) and add it as a repository or organization secret.
-
-#### Docker Security Scan
-
-The [Workflow](./.github/workflows/shared-docker-snyk-security.yml) scans a locally built Docker image for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
-
-| Environmental Variable  | Type   | Description                                                        | Required |
-| ----------------------- | ------ | ------------------------------------------------------------------ | -------- |
-| IMAGE_REFERENCE         | INPUT  | The Docker image reference to scan (e.g., ghcr.io/org/image:sha)  | true     |
-| IMAGE_TAR_ARTIFACT_NAME | INPUT  | The name of the artifact containing the Docker image tar           | true     |
-| IMAGE_TAR_FILE_PATH     | INPUT  | The path to the Docker image tar file                              | true     |
-| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)    | false    |
-| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                         | true     |
-
-The workflow requires the Docker image to be passed as a tar artifact (same pattern as the Trivy Docker security workflow).
+The workflow requires the Docker image to be passed as a tar artifact and then loaded locally before the Snyk scan runs.
 
 ##### Example
 
@@ -130,9 +71,9 @@ jobs:
           name: docker-image-${{ github.sha }}
           path: ${{ github.sha }}.tar
 
-  snyk-docker-security:
+  docker-security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-snyk-security.yml
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
@@ -142,70 +83,26 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
 
-#### Node Security Scan
+### Node
 
-The [Workflow](./.github/workflows/shared-node-snyk-security.yml) scans a Node.js project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+#### Security
 
-| Environmental Variable  | Type   | Description                                                                | Required |
-| ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
-| PROJECT_DIRECTORY       | INPUT  | The directory containing the Node.js project to scan                       | false    |
-| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)            | false    |
-| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                 | true     |
+The [Workflow](./.github/workflows/shared-node-security.yml) scans a Node.js project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+
+| Input / Secret          | Type   | Description                                                     | Required |
+| ----------------------- | ------ | --------------------------------------------------------------- | -------- |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the Node.js project to scan            | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical) | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                      | true     |
 
 ##### Example
 
 ```yml
 jobs:
-  snyk-node-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-snyk-security.yml
+  node-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-node-security.yml
     with:
       PROJECT_DIRECTORY: .
-      SNYK_SEVERITY_THRESHOLD: high
-    secrets:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-```
-
-#### Python Security Scan
-
-The [Workflow](./.github/workflows/shared-python-snyk-security.yml) scans a Python project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
-
-| Environmental Variable  | Type   | Description                                                                | Required |
-| ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
-| PROJECT_DIRECTORY       | INPUT  | The directory containing the Python project to scan                        | false    |
-| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)            | false    |
-| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                 | true     |
-
-##### Example
-
-```yml
-jobs:
-  snyk-python-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-snyk-security.yml
-    with:
-      PROJECT_DIRECTORY: .
-      SNYK_SEVERITY_THRESHOLD: high
-    secrets:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-```
-
-#### Infrastructure as Code Security Scan
-
-The [Workflow](./.github/workflows/shared-iac-snyk-security.yml) scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, CloudFormation, etc.) for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
-
-| Environmental Variable  | Type   | Description                                                                                                    | Required |
-| ----------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | -------- |
-| IAC_FILE_PATH           | INPUT  | Path to the IaC file or directory to scan (relative to repository root). Scans the whole repository if omitted | false    |
-| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)                                                | false    |
-| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                                                     | true     |
-
-##### Example
-
-```yml
-jobs:
-  snyk-iac-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-snyk-security.yml
-    with:
-      IAC_FILE_PATH: terraform/
       SNYK_SEVERITY_THRESHOLD: high
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -213,21 +110,69 @@ jobs:
 
 ### Python
 
+#### Security
+
+The [Workflow](./.github/workflows/shared-python-security.yml) scans a Python project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+
+| Input / Secret          | Type   | Description                                                     | Required |
+| ----------------------- | ------ | --------------------------------------------------------------- | -------- |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the Python project to scan             | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical) | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                      | true     |
+
+##### Example
+
+```yml
+jobs:
+  python-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-python-security.yml
+    with:
+      PROJECT_DIRECTORY: .
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
+
 #### Tests
 
 The [Workflow](./.github/workflows/shared-python-tests.yml) has the following inputs:
 
-| Environmental Variable | Type   | Description                                    | Required |
-| ---------------------- | ------ | ---------------------------------------------- | -------- |
+| Input / Secret        | Type   | Description                                    | Required |
+| --------------------- | ------ | ---------------------------------------------- | -------- |
 | CODACY_PROJECT_TOKEN   | SECRET | The key to record the execution to Codacy      | true     |
 | CODECOV_TOKEN          | SECRET | The key to record the code coverage to CodeCov | true     |
+
+### Infrastructure as Code
+
+#### Security
+
+The [Workflow](./.github/workflows/shared-iac-security.yml) scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, CloudFormation, etc.) for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+
+| Input / Secret        | Type   | Description                                                                                                    | Required |
+| --------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | -------- |
+| IAC_FILE_PATH         | INPUT  | Path to the IaC file or directory to scan (relative to repository root). Scans the whole repository if omitted | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)                                                | false    |
+| SNYK_TOKEN            | SECRET | The Snyk authentication token for scanning                                                                     | true     |
+
+##### Example
+
+```yml
+jobs:
+  iac-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-iac-security.yml
+    with:
+      IAC_FILE_PATH: terraform/
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
 
 ### Release Automation
 
 The [Workflow](./.github/workflows/shared-release-automation.yml) has the following inputs:
 
-| Environmental Variable | Type   | Description                                        | Required |
-| ---------------------- | ------ | -------------------------------------------------- | -------- |
+| Input / Secret        | Type   | Description                                        | Required |
+| --------------------- | ------ | -------------------------------------------------- | -------- |
 | PLUGIN_LIST            | INPUT  | List of plugins to use with the release automation | true     |
 | PROJECT_GITHUB_TOKEN   | SECRET | Access token for GitHub                            | true     |
 
@@ -265,6 +210,6 @@ No additional secrets or inputs are needed.
 
 The [Workflow](./.github/workflows/shared-rust-tests.yml) has the following inputs:
 
-| Environmental Variable | Type   | Description                                    | Required |
-| ---------------------- | ------ | ---------------------------------------------- | -------- |
+| Input / Secret        | Type   | Description                                    | Required |
+| --------------------- | ------ | ---------------------------------------------- | -------- |
 | CODECOV_TOKEN          | SECRET | The key to record the code coverage to CodeCov | true     |

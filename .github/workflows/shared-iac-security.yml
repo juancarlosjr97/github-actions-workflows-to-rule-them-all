@@ -1,14 +1,14 @@
 ---
-name: Snyk Python Security Scan
+name: Infrastructure as Code Security Scan
 description: |
-  This workflow scans a Python project's dependencies for vulnerabilities using Snyk.
-  Results are uploaded to GitHub Code Scanning via SARIF.
+  This workflow scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, etc.)
+  for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 on:
   workflow_call:
     inputs:
-      PROJECT_DIRECTORY:
-        description: "The directory containing the Python project to scan (relative to repository root)"
+      IAC_FILE_PATH:
+        description: "The path to the IaC file or directory to scan (relative to repository root). Scans the whole repository if not specified."
         required: false
         type: string
         default: "."
@@ -23,8 +23,8 @@ on:
         required: true
 
 jobs:
-  snyk-python-security:
-    name: Snyk Python Security Scan
+  snyk-iac-security:
+    name: Snyk Infrastructure as Code Security Scan
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -35,13 +35,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
 
-      - name: Run Snyk to check Python project for vulnerabilities
+      - name: Run Snyk to check IaC configuration for security issues
         continue-on-error: true
-        uses: snyk/actions/python@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
+        uses: snyk/actions/iac@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --sarif-file-output=snyk.sarif --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }} ${{ inputs.PROJECT_DIRECTORY }}
+          file: ${{ inputs.IAC_FILE_PATH }}
+          args: --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }}
 
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
