@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.70](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.69...0.7.70) (2026-06-08)
+
+### Chores
+
+* **deps:** update codecov/codecov-action digest to e79a696 ([#144](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/144)) ([23ac041](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/23ac041cf5916a86a07acfd143b5cacc246ba64b))
+
 ## [0.7.69](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.68...0.7.69) (2026-05-10)
 
 ### Bug Fixes
