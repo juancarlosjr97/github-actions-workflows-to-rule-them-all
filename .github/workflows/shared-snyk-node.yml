@@ -1,0 +1,49 @@
+---
+name: Snyk Node Security Scan
+description: |
+  This workflow scans a Node.js project's dependencies for vulnerabilities using Snyk.
+  Results are uploaded to GitHub Code Scanning via SARIF.
+
+on:
+  workflow_call:
+    inputs:
+      PROJECT_DIRECTORY:
+        description: "The directory containing the Node.js project to scan (relative to repository root)"
+        required: false
+        type: string
+        default: "."
+      SNYK_SEVERITY_THRESHOLD:
+        description: "Minimum severity level to fail on (low, medium, high, critical)"
+        required: false
+        type: string
+        default: "high"
+    secrets:
+      SNYK_TOKEN:
+        description: "The Snyk authentication token for scanning"
+        required: true
+
+jobs:
+  snyk-node-security:
+    name: Snyk Node Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+
+      - name: Run Snyk to check Node.js project for vulnerabilities
+        continue-on-error: true
+        uses: snyk/actions/node@8e119fbb6c251787721d34ba683ed48eba792766 # master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }} ${{ inputs.PROJECT_DIRECTORY }}
+
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
+        with:
+          sarif_file: snyk.sarif

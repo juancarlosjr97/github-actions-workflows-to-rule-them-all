@@ -1,7 +1,8 @@
 ---
 name: Snyk Docker Security Scan
 description: |
-  This workflow scans a locally saved Docker image (as a tar file) for vulnerabilities using Snyk CLI.
+  This workflow scans a locally saved Docker image (as a tar file) for vulnerabilities using Snyk.
+  Results are uploaded to GitHub Code Scanning via SARIF.
 
 on:
   workflow_call:
@@ -47,10 +48,16 @@ jobs:
       - name: Load Docker image from TAR
         run: docker load -i ${{ inputs.IMAGE_TAR_FILE_PATH }}
 
-      - name: Setup Snyk CLI
-        uses: snyk/actions/setup@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
-
-      - name: Run Snyk container test
-        run: snyk container test ${{ inputs.IMAGE_REFERENCE }} --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }}
+      - name: Run Snyk to check Docker image for vulnerabilities
+        continue-on-error: true
+        uses: snyk/actions/docker@8e119fbb6c251787721d34ba683ed48eba792766 # master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: ${{ inputs.IMAGE_REFERENCE }}
+          args: --severity-threshold=${{ inputs.SNYK_SEVERITY_THRESHOLD }}
+
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
+        with:
+          sarif_file: snyk.sarif

@@ -77,9 +77,11 @@ jobs:
 
 ### Snyk
 
+All Snyk workflows use `continue-on-error: true` on the scan step so that results are always uploaded to [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning) as SARIF, even when vulnerabilities are detected. Obtain a `SNYK_TOKEN` from your [Snyk account settings](https://app.snyk.io/account) and add it as a repository or organization secret.
+
 #### Docker Security Scan
 
-The [Workflow](./.github/workflows/shared-snyk-docker.yml) scans a locally built Docker image for vulnerabilities using Snyk CLI.
+The [Workflow](./.github/workflows/shared-snyk-docker.yml) scans a locally built Docker image for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                        | Required |
 | ----------------------- | ------ | ------------------------------------------------------------------ | -------- |
@@ -89,7 +91,7 @@ The [Workflow](./.github/workflows/shared-snyk-docker.yml) scans a locally built
 | SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)    | false    |
 | SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                         | true     |
 
-The workflow requires the Docker image to be passed as a tar artifact (same pattern as the Trivy Docker security workflow). Authenticate with Snyk by providing a `SNYK_TOKEN` secret. Obtain a token from your [Snyk account settings](https://app.snyk.io/account).
+The workflow requires the Docker image to be passed as a tar artifact (same pattern as the Trivy Docker security workflow).
 
 ##### Example
 
@@ -138,26 +140,70 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 ```
 
-#### Security Scan (Non-Docker)
+#### Node Security Scan
 
-The [Workflow](./.github/workflows/shared-snyk-security.yml) scans a project's dependencies for vulnerabilities using Snyk CLI. Supports any ecosystem that Snyk CLI supports (npm, pip, cargo, composer, etc.).
+The [Workflow](./.github/workflows/shared-snyk-node.yml) scans a Node.js project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
 
 | Environmental Variable  | Type   | Description                                                                | Required |
 | ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
-| PROJECT_DIRECTORY       | INPUT  | The directory containing the project to scan (relative to repository root) | false    |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the Node.js project to scan                       | false    |
 | SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)            | false    |
 | SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                 | true     |
-
-Obtain a `SNYK_TOKEN` from your [Snyk account settings](https://app.snyk.io/account) and add it as a repository or organization secret.
 
 ##### Example
 
 ```yml
 jobs:
-  snyk-security:
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-security.yml
+  snyk-node-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-node.yml
     with:
       PROJECT_DIRECTORY: .
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
+
+#### Python Security Scan
+
+The [Workflow](./.github/workflows/shared-snyk-python.yml) scans a Python project's dependencies for vulnerabilities using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+
+| Environmental Variable  | Type   | Description                                                                | Required |
+| ----------------------- | ------ | -------------------------------------------------------------------------- | -------- |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the Python project to scan                        | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)            | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                 | true     |
+
+##### Example
+
+```yml
+jobs:
+  snyk-python-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-python.yml
+    with:
+      PROJECT_DIRECTORY: .
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
+
+#### Infrastructure as Code Security Scan
+
+The [Workflow](./.github/workflows/shared-snyk-iac.yml) scans Infrastructure as Code configuration files (Terraform, Kubernetes, Helm, CloudFormation, etc.) for security issues using Snyk. Results are uploaded to GitHub Code Scanning via SARIF.
+
+| Environmental Variable  | Type   | Description                                                                                                    | Required |
+| ----------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | -------- |
+| IAC_FILE_PATH           | INPUT  | Path to the IaC file or directory to scan (relative to repository root). Scans the whole repository if omitted | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical)                                                | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                                                                     | true     |
+
+##### Example
+
+```yml
+jobs:
+  snyk-iac-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-snyk-iac.yml
+    with:
+      IAC_FILE_PATH: terraform/
       SNYK_SEVERITY_THRESHOLD: high
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
