@@ -129,14 +129,33 @@ No additional secrets or inputs are needed.
 
 #### Security
 
-The [Workflow](./.github/workflows/shared-rust-security.yml) includes a Cargo
-Audit stage powered by
-[`rustsec/audit-check`](https://github.com/rustsec/audit-check) to fail on
-known RustSec vulnerabilities.
+The [Workflow](./.github/workflows/shared-rust-security.yml) scans a Rust
+project's dependencies for vulnerabilities using
+[Snyk](https://snyk.io). It uses `continue-on-error: true` on the scan step so
+that results are always uploaded to
+[GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning)
+as SARIF, even when vulnerabilities are detected. Obtain a `SNYK_TOKEN` from
+your [Snyk account settings](https://app.snyk.io/account) and add it as a
+repository or organization secret.
 
-| Environmental Variable | Type   | Description                                 | Required |
-| ---------------------- | ------ | ------------------------------------------- | -------- |
-| PROJECT_GITHUB_TOKEN   | SECRET | Token used by rustsec/audit-check           | true     |
+| Environmental Variable  | Type   | Description                                                     | Required |
+| ----------------------- | ------ | -------------------------------------------------------------- | -------- |
+| PROJECT_DIRECTORY       | INPUT  | The directory containing the Rust project to scan              | false    |
+| SNYK_SEVERITY_THRESHOLD | INPUT  | Minimum severity level to fail on (low, medium, high, critical) | false    |
+| SNYK_TOKEN              | SECRET | The Snyk authentication token for scanning                     | true     |
+
+##### Example
+
+```yml
+jobs:
+  rust-security:
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-rust-security.yml@main
+    with:
+      PROJECT_DIRECTORY: .
+      SNYK_SEVERITY_THRESHOLD: high
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+```
 
 #### Tests
 
