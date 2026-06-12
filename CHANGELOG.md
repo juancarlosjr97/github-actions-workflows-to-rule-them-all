@@ -3,6 +3,12 @@
 This changelog is auto generated using release-it.
 
 
+## [0.7.71](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.70...0.7.71) (2026-06-12)
+
+### Chores
+
+* **deps:** update all dependencies to v7 ([#148](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/issues/148)) ([c2b5bb4](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/commit/c2b5bb44ae5dab55670ec6c34f95b0e436b7c0e0))
+
 ## [0.7.70](https://github.com/juancarlosjr97/github-actions-workflows-to-rule-them-all/compare/0.7.69...0.7.70) (2026-06-08)
 
 ### Chores
