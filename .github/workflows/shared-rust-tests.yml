@@ -28,6 +28,9 @@ jobs:
       - name: Add LLVM tools
         run: rustup component add llvm-tools-preview
 
+      - name: Install grcov
+        run: cargo install grcov
+
       - name: Build project
         run: cargo build --verbose
 
@@ -38,11 +41,8 @@ jobs:
           RUSTFLAGS: "-Cinstrument-coverage"
           RUSTDOCFLAGS: "-Cinstrument-coverage"
 
-      - name: Install grcov
-        run: cargo install grcov
-
       - name: Generate coverage report
-        run: grcov . --binary-path target/debug/deps/ -s . -t lcov --branch --ignore-not-existing --ignore '../**' --ignore '/*' -o coverage.lcov
+        run: grcov . --binary-path ./target/debug/ -s . -t lcov --branch --ignore-not-existing --ignore '../**' --ignore '/*' -o coverage.lcov
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7
